@@ -28,8 +28,8 @@ public share():void{
 }
 
 //onNotify hoạt động khi con có sự kiện
-public onNotify():void{
-  window.alert('You will be notified when the product goes on sale');
+public onNotify(product:Product):void{
+  window.alert('You will be notified when the product '+product.name+ ' goes on sale');
 }
 
 // navigate(id: number){

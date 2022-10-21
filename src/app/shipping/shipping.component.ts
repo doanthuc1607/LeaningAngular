@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./shipping.component.scss']
 })
 export class ShippingComponent implements OnInit {
-  //? là optional nó có cũng được không có cũng không sao
+  //? kiểm tra không phải undefined
   shippingCosts?: Observable<{ type: string, price: number }[]>;
 
   //còn constructor chỉ được chạy 1 lần vì thế nên là nếu đặt shippingCost ở đây

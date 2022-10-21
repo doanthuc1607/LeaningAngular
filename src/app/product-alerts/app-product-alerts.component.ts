@@ -21,4 +21,8 @@ export class AppProductAlertsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public notifyToProductList():void{
+    this.notify.emit(this.product);
+    }
+
 }

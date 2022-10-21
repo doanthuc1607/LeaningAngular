@@ -2,5 +2,5 @@
 <!-- nếu product không rỗng và giá lớn hơn 700 thì hiển thị button -->
 <p *ngIf="product&&product.price>700">
     <!-- định nghĩa hành vi xảy ra khi người dùng click vào button -->
-  <button type="button" (click)="notify.emit()">Notify me</button>
+  <button type="button" (click)="notifyToProductList()">Notify me</button>
 </p>

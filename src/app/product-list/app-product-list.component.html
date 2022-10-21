@@ -20,7 +20,7 @@
     <!-- truyền product hiện tại làm đầu vào cho component alerts dùng property binding -->
     <!-- update productlistcomponent để nhận data từ alerts -->
     <!-- component directives, thẻ ứng vs component được chèn vào trong code html -->
-    <app-product-alerts [product] = "product" (notify)="onNotify()">
+    <app-product-alerts [product] = "product" (notify)="onNotify($event)">
     </app-product-alerts>
     <!-- routerLink thay cho href trong the a
     còn với các sự kiện khác ta phải tạo sự kiện cho nó và bên trong ts phải inject router vào -->
