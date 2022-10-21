@@ -1,0 +1,26 @@
+<h3>Cart</h3>
+<p>
+  <a routerLink="/shipping">Shipping prices</a>
+</p>
+<div *ngIf="items">
+  <div class="cart-item" *ngFor="let item of items">
+    <span>{{item.name}}</span>
+    <span>{{item.price|currency}}</span>
+  </div>
+</div>
+<!-- dung form -->
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" placeholder="Enter name here">
+    <!-- dòng này nghĩa là kiểm tra controlname không hợp lệ sẽ hiển thị thẻ div này -->
+    <!-- <div *ngIf="!checkoutForm.controls.name.valid" style="color:red">Name is required field</div> -->
+  </div>
+  <div>
+    <label for="address">Address</label>
+    <input id="address" type="text" formControlName="address" placeholder="Enter address here">
+    <!-- <div *ngIf="!checkoutForm.controls.name.valid" style="color:red">Address is required field</div> -->
+  </div>
+  <!-- ẩn submit khi giá trị bắt buộc chưa được điền -->
+  <button class="button" type="submit" [disabled] = "!checkoutForm.valid">Purchase</button>
+</form>

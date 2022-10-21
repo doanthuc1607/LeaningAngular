@@ -1,0 +1,29 @@
+<!-- chứa product list -->
+<h2>Products</h2>
+<div *ngFor="let product of getProducts()" >
+    <!-- intepolation {{}} to render property value as text -->
+    <!-- dat tieu de la ten san pham bang cach su dung cu phap [] -->
+    <!-- [] property binding cho phép bạn sử dụng giá trị thuộc tính trong template expression-->
+    <h3>
+        <a [title]="product.name + ' details'"  [routerLink]="['/products', product.id]">
+            {{product.name}}
+        </a>
+    </h3>
+    <p *ngIf = "product.description">
+      Description: {{ product.description}}
+    </p>
+    <button type="button" (click)="share()">
+        Share
+    </button>
+
+    <!-- để hiển thị alerts như 1 component con của product list  -->
+    <!-- truyền product hiện tại làm đầu vào cho component alerts dùng property binding -->
+    <!-- update productlistcomponent để nhận data từ alerts -->
+    <!-- component directives, thẻ ứng vs component được chèn vào trong code html -->
+    <app-product-alerts [product] = "product" (notify)="onNotify()">
+    </app-product-alerts>
+    <!-- routerLink thay cho href trong the a
+    còn với các sự kiện khác ta phải tạo sự kiện cho nó và bên trong ts phải inject router vào -->
+<!-- <button (click)="navigate(product.id)">navigate</button> -->
+</div>
+

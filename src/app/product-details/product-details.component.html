@@ -1,0 +1,10 @@
+<h2>Product details</h2>
+<!-- update template, if a product exists, the <div> renders with a name, price, description -->
+<div *ngIf="product">
+  <h3>{{product.name}}</h3>
+  <!-- use current pipe to transform price from a number to a current string -->
+  <!-- pipe is a way you can transform data in your HTML -->
+  <h4>{{product.price|currency}}</h4>
+  <p>{{product.description}}</p>
+  <button type="button" (click)="addToCart(product)">Buy</button>
+</div>
